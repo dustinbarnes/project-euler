@@ -20,12 +20,19 @@ public final class PrimeNumberHelper
         int max = (int)Math.floor(Math.sqrt(num));
         boolean isPrime = true;
 
-        for ( int i = 2; i <= max; i++ )
+        if ( num % 2 == 0 )
         {
-            if ( num % i != 0)
+            isPrime = false;
+        }
+        else
+        {
+            for ( int i = 3; i <= max; i+=2 )
             {
-                isPrime = false;
-                break;
+                if ( num % i != 0)
+                {
+                    isPrime = false;
+                    break;
+                }
             }
         }
 

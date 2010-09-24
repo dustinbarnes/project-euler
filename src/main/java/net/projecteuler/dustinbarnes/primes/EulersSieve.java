@@ -37,7 +37,7 @@ public final class EulersSieve
     private static void runSieve(BitSet bitset, int maxValue)
     {
         int squareRootOfMax = (int) Math.floor(Math.sqrt(maxValue));
-        for ( int i = 0; i < squareRootOfMax; i++ )
+        for ( int i = 0; i <= squareRootOfMax; i++ )
         {
             if ( isPrime(bitset, i) )
             {
@@ -48,7 +48,7 @@ public final class EulersSieve
 
     private static void sieveMultiples(BitSet bitset, int number)
     {
-        for ( int i = number * number; i < bitset.size(); i += number )
+        for ( int i = number * number; i <= bitset.size(); i += number )
         {
             bitset.set(i, false);
         }
