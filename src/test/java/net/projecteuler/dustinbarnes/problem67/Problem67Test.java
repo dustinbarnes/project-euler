@@ -24,7 +24,7 @@ public class Problem67Test
     public void testMaximumPath() throws Exception
     {
         List<List<Integer>> definitions = getDefinitions();
-        assertThat(new Problem18().maximumPath(definitions), equalTo(7273));
+        assertThat(new Problem67().maximumPath(definitions), equalTo(7273));
     }
 
     private List<List<Integer>> getDefinitions()
