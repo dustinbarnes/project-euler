@@ -16,6 +16,12 @@ public final class EulersSieve
 
     public static List<Integer> generatePrimes(int maxValue)
     {
+        BitSet bitset = generatePrimeBitSet(maxValue);
+        return translateBitSetToList(bitset);
+    }
+
+    public static BitSet generatePrimeBitSet(int maxValue)
+    {
         if ( maxValue < 2 )
         {
             throw new IllegalArgumentException("primes under 2? surely, good sir...");
@@ -23,7 +29,7 @@ public final class EulersSieve
 
         BitSet bitset = createInitialBitSet(maxValue);
         runSieve(bitset, maxValue);
-        return translateBitSetToList(bitset);
+        return bitset;
     }
 
     private static BitSet createInitialBitSet(int maxValue)
@@ -59,7 +65,7 @@ public final class EulersSieve
         return bitset.get(i);
     }
 
-    private static List<Integer> translateBitSetToList(BitSet bitset)
+    public static List<Integer> translateBitSetToList(BitSet bitset)
     {
         List<Integer> primes = new ArrayList<Integer>();
 
