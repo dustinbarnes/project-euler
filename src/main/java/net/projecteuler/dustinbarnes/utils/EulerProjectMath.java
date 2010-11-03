@@ -1,6 +1,8 @@
 package net.projecteuler.dustinbarnes.utils;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public final class EulerProjectMath
@@ -19,5 +21,21 @@ public final class EulerProjectMath
         }
 
         return accumulator;
+    }
+
+    public static List<Integer> properDivisors(int num)
+    {
+        List<Integer> results = new ArrayList<Integer>();
+        int maxBoundary = Math.max(1, num/2);
+
+        for ( int i = 1; i <= maxBoundary; i++ )
+        {
+            if ( num % i == 0 )
+            {
+                results.add(i);
+            }
+        }
+
+        return results;
     }
 }
