@@ -38,4 +38,16 @@ public final class EulerProjectMath
 
         return results;
     }
+
+    public static long sum(List<Integer> list)
+    {
+        long accumulator = 0;
+
+        for ( Integer integer : list )
+        {
+            accumulator += integer;
+        }
+
+        return accumulator;
+    }
 }
