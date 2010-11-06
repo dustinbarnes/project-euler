@@ -18,8 +18,6 @@ public class Problem24 extends ProjectEulerSolution
 
     public String solve()
     {
-        setLoggingEnabled(true);
-
         this.iterator = 0;
         this.combination = "";
 

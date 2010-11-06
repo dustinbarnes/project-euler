@@ -26,8 +26,6 @@ public class Problem22 extends ProjectEulerSolution
 
     public BigInteger solve()
     {
-        setLoggingEnabled(true);
-        
         List<String> names = FileReader.getLinesFromFile("problem-22-names.txt");
         Collections.sort(names);
 
