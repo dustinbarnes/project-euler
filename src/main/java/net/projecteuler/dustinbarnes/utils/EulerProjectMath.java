@@ -50,4 +50,38 @@ public final class EulerProjectMath
 
         return accumulator;
     }
+
+    public static boolean isPandigital(String digits, int numDigits)
+    {
+        if ( digits.length() > numDigits )
+        {
+            return false;
+        }
+        
+        boolean[] hits = new boolean[numDigits + 1];
+        hits[0] = true;
+
+        for ( int i = 0; i < digits.length(); i++ )
+        {
+            String s = digits.substring(i, i+1);
+            int digit = new Integer(s);
+            try
+            {
+                hits[digit] = true;
+            }
+            catch ( ArrayIndexOutOfBoundsException e )
+            {
+                // We don't care.
+            }
+        }
+
+        boolean allHits = true;
+        for ( boolean b : hits )
+        {
+            if ( !b )
+                allHits = false;
+        }
+
+        return allHits;
+    }
 }
